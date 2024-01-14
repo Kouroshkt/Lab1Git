@@ -1,0 +1,79 @@
+1:
+mkdir laboration1Git
+cd laboration1git
+git init
+
+2:
+type nul>README.md
+echo duck > README.md
+echo moose >> README.md
+echo cat >> README.md
+
+3:
+git add README.md
+git commit -m"Initial commit"
+
+4:
+git checkout -b feature1
+
+5:
+echo dog >> README.md
+powershell -Command "(Get-Content README.md) -replace 'moose', 'mouse' | Set-Content README.md"
+git add README.md
+git commit -m"Add dog to list and modify the mouse"
+
+6:
+git checkout main
+powershell -Command "(Get-Content README.md) -replace 'moose', 'mahmut' | Set-Content README.md"
+git add README.md
+git commit -m"Chang moose to mahmut"
+
+7:
+git merge feature1
+Jag fick merege conflict och jag ändrade texten i README.md till den som ska vara
+git add README.md
+git commit -m"Fix merge conflict"
+
+8:
+git tag extinct
+
+9:
+git reset --hard HEAD~1
+
+11:
+powershell -Command "(Get-Content README.md) -replace 'duck', 'Duck'-replace 'mahmut','Mahmut'-replace 'cat','Cat' | Set-Content README.md"
+git add README.md
+git commit -m"Animal names start with capital letter"
+
+10:
+git branch feature2
+
+12:
+git checkout feature2
+type nul>fix1.txt
+git add fix1.txt
+git commit -m"Create fix1.txt"
+type nul>fix2.txt
+git add fix2.txt
+git commit -m"Create fix2.txt"
+
+13:
+git checkout main
+De två filerna försvinner i min locala filsystem.
+
+14:
+git checkout feature2
+git log
+Jag kopierade commit koden
+git checkout main
+git cherry-pick cf4a1bcfa50b53d5f8448dfa04a35aa8349d8242
+
+15:
+
+16:
+git remote add origin https://github.com/Kouroshkt/Lab1Git.git
+git push --all origin
+git push --tags origin
+git add fix2.txt
+git commit -m"Add all git commands to fix2.txt"
+git push origin main
